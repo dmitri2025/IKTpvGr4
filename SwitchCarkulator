@@ -1,0 +1,45 @@
+namespace SwitchCarkulator
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Sisesta esimine number");
+
+            float FirstNumber = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("sisesta teine number");
+            float secondNumber = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Vali tehe: +, -, *, /");
+            string input = Console.ReadLine();
+
+            switch (input) 
+            {
+                case "+":
+                    Console.WriteLine($"Tulemus: {FirstNumber + secondNumber}");
+                    break;
+                case "-":
+                    Console.WriteLine($"Tulemus: {FirstNumber - secondNumber}");
+                    break;
+                case "*":
+                    Console.WriteLine($"Tulemus: {FirstNumber * secondNumber}");
+                    break;
+                case "/":
+                    if (secondNumber  == 0) 
+                    {
+                    Console.WriteLine("Nuliga jagamine ei ole lubatud");
+                    }
+                    else 
+                    {
+                    Console.WriteLine($"Tulemus: {FirstNumber / secondNumber}");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Tehe pole lubatud");
+                    break;
+            }  
+        }
+    }
+}
